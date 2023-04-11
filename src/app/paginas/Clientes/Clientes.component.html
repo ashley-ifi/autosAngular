@@ -1,0 +1,26 @@
+<div class = 'container-fluid mt-4'>
+  <div class="row bg-dark">
+ <div class="mb-3 mt-4">
+ <label for="nombre" class="form-label text-white">Nombre</label>
+  <input type="text" [(ngModel)]="cliente.nombre" class="form-control" id="nombre">
+</div>
+  <div class="mb-3">
+  <label for="exampleInputPassword1" class="form-label text-white">Password</label>
+ <input type="password" [(ngModel)]="cliente.password" class="form-control" id="exampleInputPassword1">
+  </div><div class="mb-3 form-check">
+<input type="checkbox" [(ngModel)]="quiereContacto" class="form-check-input" id="proporcionaDatos">
+ <label class="form-check-label text-white" for="proporcionaDatos">¿Desea contacto?</label>
+</div>
+ <div class="mb-3" *ngIf="quiereContacto">
+ <label for="correo" class="form-label text-white">Dirección de correo</label>
+ <input type="email" [(ngModel)]="cliente.email" class="form-control" id="correo" aria-describedby="correoHelp">
+ </div>
+ <div class="mb-3" *ngIf="quiereContacto">
+ <label for="telefono" class="form-label text-white">Teléfono</label>
+ <input type="number"  [(ngModel)]="cliente.telefono" class="form-control" id="telefono" aria-describedby="telefonoHelp">
+ </div>
+ <div class="d-md-block">
+ <button class="btn btn-primary  mb-5 mt-4" type="button">Registrar Cliente</button>
+  </div>
+  </div>
+ </div>
